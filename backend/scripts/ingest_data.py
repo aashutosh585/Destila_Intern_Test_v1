@@ -15,7 +15,7 @@ os.environ['PYTHONIOENCODING'] = 'utf-8'
 
 # Get the script directory and set up paths
 SCRIPT_DIR = Path(__file__).parent
-PROJECT_ROOT = SCRIPT_DIR.parent.parent
+PROJECT_ROOT = SCRIPT_DIR.parent
 
 def get_absolute_path(relative_path):
     """Convert relative path to absolute based on project root."""

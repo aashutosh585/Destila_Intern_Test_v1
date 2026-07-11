@@ -6,11 +6,11 @@ from pathlib import Path
 os.environ['PYTHONIOENCODING'] = 'utf-8'
 
 # Change to the backend directory
-backend_dir = Path(__file__).parent / 'backend'
+backend_dir = Path(__file__).parent
 os.chdir(backend_dir)
 
 # Run the ingestion script
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(backend_dir))
 print("Running ingestion script...")
 
 # Import and run main from ingest_data

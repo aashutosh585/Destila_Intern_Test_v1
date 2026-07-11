@@ -22,17 +22,10 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS middleware for frontend
-frontend_origins = [
-    origin.strip()
-    for origin in os.getenv("FRONTEND_ORIGINS", "https://destila-intern-test-v1-pqh1.vercel.app,http://localhost:5173,http://localhost:3000").split(",")
-    if origin.strip()
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=frontend_origins,
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
