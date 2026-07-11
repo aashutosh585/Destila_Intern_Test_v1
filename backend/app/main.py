@@ -30,9 +30,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include routers
+# Include routers (both at root and with /api prefix for Vercel routing compatibility)
 app.include_router(exceptions.router)
 app.include_router(dashboard.router)
+app.include_router(exceptions.router, prefix="/api")
+app.include_router(dashboard.router, prefix="/api")
 
 
 @app.get("/")
